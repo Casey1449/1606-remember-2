@@ -1,7 +1,8 @@
 <h1>Reminders: </h1>
-<div class="reminder-list">
-    {{#each reminders as |reminder|}}
+<ul class="reminder-list">
+
+    {{#each model as |reminder|}}
       {{reminder-item reminder=reminder}}
     {{/each}}
-</div>
-<!-- {{outlet}} -->
+
+</ul>
