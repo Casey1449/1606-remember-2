@@ -1,0 +1,8 @@
+.reminder-list-item:hover{
+  color: blanchedalmond;
+  cursor: pointer;
+}
+
+.active {
+  color: purple;
+}
