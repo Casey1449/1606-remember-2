@@ -1,8 +1,8 @@
 .reminder-list-item:hover{
-  color: blanchedalmond;
+  background-color: blanchedalmond;
   cursor: pointer;
 }
 
 .active {
-  color: purple;
+  background-color: bisque;
 }
