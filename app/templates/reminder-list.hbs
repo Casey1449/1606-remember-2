@@ -11,24 +11,7 @@
     {{outlet}}
 </ul>
 <section>
-  {{#link-to "new" null tagName="button" class="new-reminder-button"}}
-    ➕
-  {{/link}}
+  {{#link-to "reminder-list.new"}}
+    <button>➕</button>
+  {{/link-to}}
 </section>
-<!--
-make button
-  make new route to /new
-  in new have input and button
-  -->
-
-
-
-<!-- Users should be able to create new note.
-
-At the bottom of the reminders.hbs template, there is a button that routes the use to /new where they can create a new reminder.
-
-
-The new reminder should have inputs for the title, date, and notes.
-The new reminder should have a button for submitting the new note.
-Pressing the button, should submit reminder to the database and have it shown in the Reminders list.
-There are no tests set up for this user story. So, you'll have to write an acceptance test. -->
