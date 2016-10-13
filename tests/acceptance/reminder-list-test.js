@@ -35,7 +35,7 @@ test('clicking on an individual item', function(assert) {
   });
 });
 
-test('clicking on the ➕ button displays form route', function(assert) {
+test('clicking on the ➕ button displays the form', function(assert) {
 
   visit('/');
   click('.add-reminder-button');

@@ -10,7 +10,7 @@ moduleForAcceptance('Acceptance | reminder list/new', {
   }
 });
 
-test('visiting new', function(assert) {
+test('visiting the "new" route', function(assert) {
   visit('/new');
 
   andThen(function() {
@@ -18,7 +18,7 @@ test('visiting new', function(assert) {
   });
 });
 
-test('viewing the homepage', function(assert) {
+test('submitting a new reminder', function(assert) {
 
   visit('/new');
   fillIn('.reminder-title-input', 'Some title');
