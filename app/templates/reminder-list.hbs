@@ -1,6 +1,6 @@
 <h1>Reminders: </h1>
 
-{{new-reminder}}
+
 <ul class="reminder-list">
     {{#each model as |reminder|}}
       {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
@@ -9,8 +9,8 @@
           <p>{{reminder.notes}}</p>
       {{/link-to}}
     {{/each}}
-    {{outlet}}
 </ul>
+{{outlet}}
 <section>
   {{#link-to "reminder-list.new"}}
     <button>➕</button>

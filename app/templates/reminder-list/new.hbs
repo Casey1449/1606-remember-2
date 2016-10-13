@@ -1,5 +1,5 @@
 
-<form {{action "createReminder" on="submit"}}>
+<form {{action "createReminder" on="submit" bubbles=false}}>
   <h2>Create New Reminder</h2>
   {{ input value=title class="reminder-title-input" placeholder="Insert Title" }} <br>
   {{ input value=date type="date" class="reminder-date-input" placeholder="Insert Date" }} <br>
