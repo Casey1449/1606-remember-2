@@ -1,18 +1,19 @@
-<h1>Reminders: </h1>
+<section class="reminders-list-container">
+  <ul class="reminder-list">
+      {{#each model as |reminder|}}
+        {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
+            <h2 class="spec-reminder-item">{{reminder.title}}</h2>
+            <p class="reminder-item-date">{{reminder.date}}</p>
+        {{/link-to}}
+      {{/each}}
+  </ul>
+  <div class="add-reminder-button-container">
+    {{#link-to "reminder-list.new"}}
+      <button class="add-reminder-button">➕</button>
+    {{/link-to}}
+  </div>
+</section>
 
-
-<ul class="reminder-list">
-    {{#each model as |reminder|}}
-      {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
-          <h2 class="spec-reminder-item">{{reminder.title}}</h2>
-          <p class="reminder-item-date">{{reminder.date}}</p>
-          <p class="reminder-item-notes">{{reminder.notes}}</p>
-      {{/link-to}}
-    {{/each}}
-</ul>
-{{outlet}}
-<section>
-  {{#link-to "reminder-list.new"}}
-    <button class="add-reminder-button">➕</button>
-  {{/link-to}}
+<section class="reminder-container">
+  {{outlet}}
 </section>
