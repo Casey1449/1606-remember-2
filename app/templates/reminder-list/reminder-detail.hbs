@@ -3,5 +3,9 @@
   <h2 class="spec-reminder-title">{{reminder.title}}</h2>
   <p class="reminder-detail-date">{{reminder.date}}</p>
   <p >{{reminder.notes}}</p>
+  {{#link-to "reminder-list.reminder-detail.edit-item"}}
+    <button class="edit-button">edit this reminder</button>
+  {{/link-to}}
   {{/with}}
 </article>
+{{outlet}}
