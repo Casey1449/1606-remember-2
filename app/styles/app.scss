@@ -68,17 +68,12 @@ button {
 
 form{
   background-color: $light-accent-color;
-  color: $primary-color-1;
+  color: $dark-accent-color;
   padding: 20px;
   border-radius: 10px;
-  border: 2px solid $primary-color-1;
+  border: 2px solid $dark-accent-color;
   max-width: 70%;
   margin: auto;
-}
-
-form h2 {
-  border-bottom: 1px solid $primary-color-1;
-
 }
 
 input{
@@ -127,8 +122,6 @@ button:hover {
   padding: 15px;
   margin: 0px;
   border-radius: 5px;
-  // border-top: 1px solid $dark-accent-color;
-  // border-bottom: 1px solid $dark-accent-color;
 }
 
 .reminder-list-item:hover{
@@ -168,5 +161,6 @@ button:hover {
 }
 
 .spec-reminder-title {
+  color: $dark-accent-color;
   border-bottom: 1px solid $dark-accent-color;
 }
