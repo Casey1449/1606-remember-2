@@ -2,6 +2,7 @@
 
 body {
   margin: 0px;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 .application {
@@ -52,8 +53,10 @@ body {
 .reminder-list-item:hover{
   cursor: pointer;
   background-color: blanchedalmond;
+  font-family: 'Fira Sans';
+
 }
 
-.active {
+.reminder-list-item:active {
   background-color: bisque;
 }
