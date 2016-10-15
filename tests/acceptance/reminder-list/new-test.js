@@ -28,6 +28,5 @@ test('submitting a new reminder', function(assert) {
   andThen(function() {
     assert.equal(Ember.$('.spec-reminder-item').length, 6);
     assert.equal(Ember.$('.spec-reminder-item:last').text(), 'Some title');
-    assert.equal(Ember.$('.reminder-item-notes:last').text(), 'Some notes');
   });
 });
