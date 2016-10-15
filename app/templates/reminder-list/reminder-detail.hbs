@@ -1,7 +1,7 @@
-<article>
+<article class="reminder-item-detail">
   {{#with model as |reminder| }}
   <h2 class="spec-reminder-title">{{reminder.title}}</h2>
-  <p>{{reminder.date}}</p>
-  <p>{{reminder.notes}}</p>
+  <p class="reminder-detail-date">{{reminder.date}}</p>
+  <p >{{reminder.notes}}</p>
   {{/with}}
 </article>
