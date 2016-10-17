@@ -3,7 +3,7 @@ import moment from 'moment';
 
 export default DS.Transform.extend({
   deserialize(serialized) {
-    if (serialized){return moment(serialized).format("dddd, MMM Do");}
+    if (serialized){return moment(serialized).format("dddd, MMM Do, h:mm a");}
     return serialized;
   },
 
