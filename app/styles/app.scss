@@ -15,7 +15,6 @@ p {
 h2 {
   margin-top:0px;
   border-bottom: 1px solid $dark-accent-color;
-
 }
 
 .application {
@@ -34,7 +33,6 @@ h2 {
 
 .reminder-list {
   height: 80vh;
-
   padding: 0px 10px;
   overflow-y: scroll;
   list-style: none;
@@ -74,8 +72,7 @@ button {
   font-size: 25px;
 }
 
-
-form{
+form {
   background-color: $light-accent-color;
   color: $dark-accent-color;
   padding: 20px;
@@ -85,7 +82,7 @@ form{
   margin: auto;
 }
 
-input{
+input {
   border: none;
   margin: 10px 0px;
   background-color: $primary-text-color;
@@ -137,29 +134,29 @@ button:hover {
   border-radius: 5px;
 }
 
-.reminder-list-item:hover{
+.reminder-list-item:hover {
   cursor: pointer;
   background-color: $primary-hover-1;
 }
 
-.reminder-detail-date{
+.reminder-detail-date {
   font-family: $sans;
   margin: 0px;
   color: $dark-accent-color;
 }
 
-.spec-reminder-item{
+.spec-reminder-item {
   border: none;
   margin: 0px;
 }
 
-.reminder-item-date{
+.reminder-item-date {
   font-family: $sans;
   margin: 0px
 }
 
 .reminder-list-item.active {
-  border:none;
+  border: none;
   background-color: rgba($primary-text-color, .8);
   color: $primary-color-1;
 }
