@@ -34,3 +34,14 @@ test('clicking on an individual item', function(assert) {
     assert.equal(Ember.$('.spec-reminder-item:first').text().trim(), Ember.$('.spec-reminder-title').text().trim());
   });
 });
+
+test('clicking on the ➕ button displays the form', function(assert) {
+
+  visit('/');
+  click('.add-reminder-button');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/new');
+    assert.equal(Ember.$('.create-reminder-form').length, 1);
+  });
+});
