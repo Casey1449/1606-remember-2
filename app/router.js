@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('reminder-list', { path: '/' }, function() {
     this.route('reminder-detail', { path: ':id' });
     this.route('new');
+    this.route('edit', { path: ':id/edit'});
   });
 });
 
