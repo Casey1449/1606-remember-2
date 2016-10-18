@@ -91,3 +91,35 @@ andThen(function(){
     assert.equal(Ember.$('.dirty-warning-icon:visible').length, 1);
   });
 });
+test('has a search field', function(assert) {
+
+  visit('/');
+
+  andThen(function(){
+    assert.equal(Ember.$('.reminder-list-filter').length, 1);
+  });
+});
+test('search field finds case insensitive matches in the reminder-list titles', function(assert) {
+  visit('/');
+
+  click('.reminder-list-item:nth-child(5)');
+  click('.edit-button');
+  fillIn('.reminder-title-input', 'New');
+  click('.reminder-submit-button');
+
+  andThen(function(){
+    click('.reminder-list-item:nth-child(2)');
+    click('.edit-button');
+    fillIn('.reminder-title-input', 'neWton');
+    click('.reminder-submit-button');
+  });
+
+  andThen(function(){
+    click('.reminder-list-filter');
+    fillIn('.reminder-list-filter', "nEw");
+  });
+
+  andThen(function() {
+    assert.equal(Ember.$('.spec-reminder-item:visible').length, 2);
+  });
+});

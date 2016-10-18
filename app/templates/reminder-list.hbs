@@ -1,4 +1,5 @@
 <section class="reminders-list-container">
+  <input class="reminder-list-filter" type=search name=s />
   <ul class="reminder-list">
       {{#each model as |reminder|}}
         {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
