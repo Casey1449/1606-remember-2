@@ -45,3 +45,16 @@ test('clicking on the ➕ button displays the form', function(assert) {
     assert.equal(Ember.$('.create-reminder-form').length, 1);
   });
 });
+
+test('clicking on the edit button takes you to the :id/edit url', function(assert) {
+
+  visit('/');
+  click('.reminder-list-item:last');
+  click('.edit-button');
+
+  andThen(function() {
+    assert.equal(currentURL(), '/5/edit');
+    assert.equal(Ember.$('.create-reminder-form').length, 1);
+    assert.equal(Ember.$('.reminder-revert-button').length, 1);
+  });
+});
