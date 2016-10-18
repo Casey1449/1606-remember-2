@@ -5,6 +5,11 @@
     {{ input value=reminder.date type="datetime-local" class="reminder-date-input" placeholder="Insert Date" }} <br>
     {{ textarea value=reminder.notes class="reminder-notes-input" placeholder="Insert Note" }} <br>
     <button class="reminder-submit-button" {{action "updateReminder" reminder.id on="click"}}>Submit</button>
-    <button class="reminder-revert-button" {{action "revertReminder" reminder.id on="click"}}>Revert ↺</button>
+    <button class="reminder-revert-button"
+      {{action "revertReminder" reminder.id on="click"}}
+      hidden={{ unless reminder.hasDirtyAttributes 'true'}}
+    >
+      Revert ↺
+    </button>
 </form>
 {{/with}}
