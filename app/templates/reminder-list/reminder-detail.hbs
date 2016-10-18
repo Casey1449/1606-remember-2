@@ -1,6 +1,7 @@
 <article class="reminder-item-detail">
   {{#with model as |reminder| }}
-  {{#link-to "reminder-list.edit" reminder}}
+  {{delete-button reminder=reminder}}
+  {{#link-to "reminder-list.edit" }}
   <span title="edit this reminder"><button class="edit-button">📝</button></span>
   {{/link-to}}
   <h2 class="spec-reminder-title">{{reminder.title}}</h2>
