@@ -7,8 +7,7 @@
     <button class="reminder-submit-button" {{action "updateReminder" reminder.id on="click"}}>Submit</button>
     <button class="reminder-revert-button"
       {{action "revertReminder" reminder.id on="click"}}
-      hidden={{ unless reminder.hasDirtyAttributes 'true'}}
-    >
+      hidden={{ unless reminder.hasDirtyAttributes 'true'}}>
       Revert ↺
     </button>
 </form>
