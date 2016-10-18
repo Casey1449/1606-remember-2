@@ -59,15 +59,35 @@ test('clicking on the edit button takes you to the :id/edit url', function(asser
   });
 });
 
-test('editing button should trigger warning', function(assert) {
+test('editing fields should show the revert button', function(assert) {
 
   visit('/');
   click('.reminder-list-item:last');
+
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-revert-button').length, 0);
+  });
+
   click('.edit-button');
   fillIn('.reminder-title-input', 'New');
 
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-revert-button').length, 1);
+  });
+});
+
+test('editing button should trigger warning', function(assert) {
+
+  visit('/');
+  click('.reminder-list-item:nth-child(5)');
+  click('.edit-button');
+  fillIn('.reminder-title-input', 'New');
+
+andThen(function(){
+  click('.reminder-list-item:nth-child(5)');
+});
 
   andThen(function() {
-    assert.equal(Ember.$('.dirty-warning-icon').length, 1);
+    assert.equal(Ember.$('.dirty-warning-icon:visible').length, 1);
   });
 });
