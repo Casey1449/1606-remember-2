@@ -4,6 +4,7 @@
         {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
             <h2 class="spec-reminder-item">{{reminder.title}}</h2>
             <p class="reminder-item-date">{{reminder.date}}</p>
+            <h3 hidden={{ unless reminder.hasDirtyAttributes 'true' }}>⚠️</h3>
         {{/link-to}}
       {{/each}}
   </ul>
