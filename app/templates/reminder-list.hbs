@@ -2,7 +2,7 @@
   <ul class="reminder-list">
       {{#each model as |reminder|}}
         {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
-          <span title="delete this reminder"><button class="delete-button" {{action "destroyReminder" reminder.id on="click"}}>🗑</button></span>
+          {{delete-button reminder=reminder}}
           <span title="This reminder has unsaved changes!" class="dirty-warning-icon" hidden={{ unless reminder.hasDirtyAttributes 'true' }}>⚠️</span>
           <h2 class="spec-reminder-item">{{reminder.title}}</h2>
           <p class="reminder-item-date">{{reminder.date}}</p>
