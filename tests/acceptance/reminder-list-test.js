@@ -83,12 +83,46 @@ test('editing should trigger warning icon when changes are unsaved', function(as
   click('.edit-button');
   fillIn('.reminder-title-input', 'New');
 
-andThen(function(){
-  click('.reminder-list-item:nth-child(5)');
-});
+  andThen(function(){
+    click('.reminder-list-item:nth-child(5)');
+  });
 
   andThen(function() {
     assert.equal(Ember.$('.dirty-warning-icon:visible').length, 1);
+  });
+});
+
+test('has a search field', function(assert) {
+
+  visit('/');
+
+  andThen(function(){
+    assert.equal(Ember.$('.reminder-list-filter').length, 1);
+  });
+});
+
+test('search field finds case insensitive matches in the reminder-list titles', function(assert) {
+  visit('/');
+
+  click('.reminder-list-item:nth-child(5)');
+  click('.edit-button');
+  fillIn('.reminder-title-input', 'New1111111111111');
+  click('.reminder-submit-button');
+
+  andThen(function(){
+    click('.reminder-list-item:nth-child(2)');
+    click('.edit-button');
+    fillIn('.reminder-title-input', 'neW1111111111111ton');
+    click('.reminder-submit-button');
+  });
+
+  andThen(function(){
+    click('.reminder-list-filter');
+    fillIn('.reminder-list-filter', "new");
+  });
+
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-list-item').length, 2);
   });
 });
 

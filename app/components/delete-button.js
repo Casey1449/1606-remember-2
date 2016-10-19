@@ -12,9 +12,4 @@ export default Ember.Component.extend({
        });
     }
   }
-
 });
-
-
-
-// this.get('store').findRecord('reminder', reminder.id).then((reminder) => {

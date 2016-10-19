@@ -1,7 +1,12 @@
 <section class="reminders-list-container">
+  {{input type="search" value=search key-up="updateSearch" class="reminder-list-filter"}}
   <ul class="reminder-list">
-      {{#each model as |reminder|}}
+      {{#each reminders as |reminder|}}
         {{#link-to "reminder-list.reminder-detail" reminder tagName="li" class="reminder-list-item" }}
+          <span title="This reminder has unsaved changes!" class="dirty-warning-icon"
+            hidden={{ unless reminder.hasDirtyAttributes 'true' }}>
+            ⚠️
+          </span>
           {{delete-button reminder=reminder}}
           <span title="This reminder has unsaved changes!" class="dirty-warning-icon" hidden={{ unless reminder.hasDirtyAttributes 'true' }}>⚠️</span>
           <h2 class="spec-reminder-item">{{reminder.title}}</h2>
