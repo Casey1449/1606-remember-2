@@ -104,19 +104,19 @@ test('search field finds case insensitive matches in the reminder-list titles', 
 
   click('.reminder-list-item:nth-child(5)');
   click('.edit-button');
-  fillIn('.reminder-title-input', 'New');
+  fillIn('.reminder-title-input', 'New1111111111111');
   click('.reminder-submit-button');
 
   andThen(function(){
     click('.reminder-list-item:nth-child(2)');
     click('.edit-button');
-    fillIn('.reminder-title-input', 'neWton');
+    fillIn('.reminder-title-input', 'neW1111111111111ton');
     click('.reminder-submit-button');
   });
 
   andThen(function(){
     click('.reminder-list-filter');
-    fillIn('.reminder-list-filter', "nEw");
+    fillIn('.reminder-list-filter', "nEw1111111111111");
   });
 
   andThen(function() {
