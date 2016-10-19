@@ -7,6 +7,8 @@
             hidden={{ unless reminder.hasDirtyAttributes 'true' }}>
             ⚠️
           </span>
+          {{delete-button reminder=reminder}}
+          <span title="This reminder has unsaved changes!" class="dirty-warning-icon" hidden={{ unless reminder.hasDirtyAttributes 'true' }}>⚠️</span>
           <h2 class="spec-reminder-item">{{reminder.title}}</h2>
           <p class="reminder-item-date">{{reminder.date}}</p>
         {{/link-to}}

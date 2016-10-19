@@ -59,7 +59,7 @@ test('clicking on the edit button takes you to the :id/edit url', function(asser
   });
 });
 
-test('editing fields should show the revert button', function(assert) {
+test('editing fields should show the revert button when changes are unsaved', function(assert) {
 
   visit('/');
   click('.reminder-list-item:last');
@@ -76,21 +76,22 @@ test('editing fields should show the revert button', function(assert) {
   });
 });
 
-test('editing button should trigger warning', function(assert) {
+test('editing should trigger warning icon when changes are unsaved', function(assert) {
 
   visit('/');
   click('.reminder-list-item:nth-child(5)');
   click('.edit-button');
   fillIn('.reminder-title-input', 'New');
 
-andThen(function(){
-  click('.reminder-list-item:nth-child(5)');
-});
+  andThen(function(){
+    click('.reminder-list-item:nth-child(5)');
+  });
 
   andThen(function() {
     assert.equal(Ember.$('.dirty-warning-icon:visible').length, 1);
   });
 });
+
 test('has a search field', function(assert) {
 
   visit('/');
@@ -99,6 +100,7 @@ test('has a search field', function(assert) {
     assert.equal(Ember.$('.reminder-list-filter').length, 1);
   });
 });
+
 test('search field finds case insensitive matches in the reminder-list titles', function(assert) {
   visit('/');
 
@@ -121,5 +123,15 @@ test('search field finds case insensitive matches in the reminder-list titles', 
 
   andThen(function() {
     assert.equal(Ember.$('.reminder-list-item').length, 2);
+  });
+});
+
+test('clicking the delete button component', function(assert) {
+
+  visit('/');
+  click('.delete-button:last');
+
+  andThen(function() {
+    assert.equal(Ember.$('.reminder-list-item').length, 4);
   });
 });
