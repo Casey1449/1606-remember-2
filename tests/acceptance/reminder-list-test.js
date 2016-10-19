@@ -116,10 +116,10 @@ test('search field finds case insensitive matches in the reminder-list titles', 
 
   andThen(function(){
     click('.reminder-list-filter');
-    fillIn('.reminder-list-filter', "nEw1111111111111");
+    fillIn('.reminder-list-filter', "new");
   });
 
   andThen(function() {
-    assert.equal(Ember.$('.spec-reminder-item:visible').length, 2);
+    assert.equal(Ember.$('.reminder-list-item').length, 2);
   });
 });
